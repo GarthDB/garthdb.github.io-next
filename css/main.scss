@@ -1,0 +1,27 @@
+:root {
+  --copy-color: #3a3a38;
+  --copy-color-em: #0f0f0e;
+  --copy-font-family: 'Alegreya', serif;
+  --heading-font-family: 'Roboto Slab', serif;
+  --primary-background-color: #eef0eb;
+  height: 100%;
+}
+
+@import 'type';
+
+body {
+  background: var(--primary-background-color);
+  min-height: 100%;
+}
+// body::before {
+//   content: '';
+//   position: absolute;
+//   background-size: var(--body-line-height) var(--body-line-height);
+//   background-image:
+//     linear-gradient(to bottom, grey 1px, transparent 1px);
+//   min-width: 100%;
+//   min-height: 100%;
+//   top: 0;
+//   left: 0;
+//   pointer-events: none;
+// }
