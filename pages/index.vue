@@ -22,7 +22,8 @@
       <section class="institution company">
         <div class="hr--2"></div>
         <h3 class="institution__name">Rain</h3>
-        <h4 class="institution__jobTitle">Director of User Experience, <span class="instituion__date">2010</span></h4>
+        <h4 class="institution__jobTitle">Director of User Experience</h4>
+        <div class="instituion__date">2010</div>
         <p class="institution__jobDescription">Vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras. Urna nunc id cursus metus aliquam eleifend. Ipsum dolor sit amet consectetur adipiscing. Viverra tellus in hac habitasse platea. Vel eros donec ac odio. Tortor aliquam nulla facilisi cras fermentum odio.</p>
       </section>
     </section>
@@ -128,18 +129,13 @@
 .content {
   max-width: 800px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: block;
+  grid-template-columns: repeat(1, 1fr);
   grid-column-gap: calc(2 * var(--body-line-height));
   grid-row-gap: var(--body-line-height);
   grid-row-gap: 0px;
-  grid-template-areas:
-    "header header"
-    "profile profile"
-    "workHistory workHistory"
-    "teachingHistory education"
-    "publications speaking"
-    "osProjects osProjects";
+  grid-template-areas: none;
+  padding: 0 var(--body-line-height);
 }
 .headerMain {
   grid-area: header;
@@ -151,7 +147,7 @@
   grid-area: workHistory;
   .institution {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     grid-column-gap: calc(2 * var(--body-line-height));
     padding-bottom: calc(2 * var(--body-line-height));
   }
@@ -159,14 +155,14 @@
     grid-column: 1 / span 1;
   }
   .institution__jobTitle {
-    grid-column: 2 / span 3;
+    grid-column: 1 / span 1;
     // padding-left: var(--body-line-height);
   }
   .institution__jobDescription {
-    grid-column: 2 / span 3;
+    grid-column: 1 / span 1;
   }
   .hr--2 {
-    grid-column: 2 / span 3;
+    grid-column: 1 / span 1;
   }
 }
 .instituion__date {
@@ -186,5 +182,35 @@
 }
 .section--publications {
   grid-area: publications;
+}
+@media (min-width:801px) {
+  .content {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "header header"
+      "profile profile"
+      "workHistory workHistory"
+      "teachingHistory education"
+      "publications speaking"
+      "osProjects osProjects";
+  }
+  .section--workHistory {
+    .institution {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .institution__name {
+      grid-column: 1 / span 1;
+    }
+    .institution__jobTitle {
+      grid-column: 2 / span 3;
+      // padding-left: var(--body-line-height);
+    }
+    .institution__jobDescription {
+      grid-column: 2 / span 3;
+    }
+    .hr--2 {
+      grid-column: 2 / span 3;
+    }
+  }
 }
 </style>
