@@ -28,6 +28,9 @@ module.exports = {
       }
     ]
   },
+  generate: {
+    dir: 'docs'
+  },
   /*
    ** Customize the progress bar color
    */
